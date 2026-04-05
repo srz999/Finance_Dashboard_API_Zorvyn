@@ -35,6 +35,15 @@ app.use('/api/users', userRoutes);
 app.use('/api/records', recordRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
+// Home route
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Welcome to Finance Dashboard API',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({
